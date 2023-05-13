@@ -1,15 +1,19 @@
-import React from "react";
-import MovieCard from "./MovieCard";
+import React, { useContext } from "react";
+import Imagecarousel from "./Trending-trailers/Imagecarousel";
+import NewContext from "../context/NewContext";
 
-const MovieComponent = ({ movieInfo }) => {
+const MovieComponent = () => {
+  const data = useContext(NewContext)
+
   return (
     <div className="wrapper">
       <div className="container">
-        <h1>List of cards</h1>
         <div className="grid grid-three-column">
-          {movieInfo.map((curVal, id) => {
-            return <MovieCard key={id} myData={curVal} />;
+        {data.value1.slice(0,data.value3).map((curVal, id) => {
+            return <Imagecarousel key={id + 1} value={id + 5} />;
           })}
+         <h3 style={{color:"white",paddingLeft:"50px"}}>Trending Trailers {"(New 3) ->"}</h3>
+
         </div>
       </div>
     </div>
