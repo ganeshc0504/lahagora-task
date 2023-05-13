@@ -1,0 +1,12 @@
+.freeCard {
+    min-width: 250px;
+    max-width: 250px;
+
+    height: 150px;
+    background-color: hotpink;
+    background-repeat: no-repeat;
+    margin: 10px;
+    color: white;
+    border-radius: 15px;
+
+}
