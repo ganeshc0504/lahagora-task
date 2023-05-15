@@ -40,11 +40,11 @@ const HeartWarming = (id) => {
     }
     
     
-    const handelInfiniteScroll = async () => {
+    const horizontalScroll = async () => {
 
         try {
           if (
-            box.clientWidth + box.scrollLeft + 1 >=
+            box.clientWidth + box.scrollLeft >=
             box.scrollWidth
           ) {
             setPage((prev)=> prev + 1)
@@ -56,10 +56,10 @@ const HeartWarming = (id) => {
     
   useEffect(() => {
     if(box){
-        box.addEventListener("scroll", handelInfiniteScroll);
-        return () => box.removeEventListener("scroll", handelInfiniteScroll);
+        box.addEventListener("scroll", horizontalScroll);
+        return () => box.removeEventListener("scroll", horizontalScroll);
     }
-  }, []);
+  });
     
     return (
         <div className="product-carousel" key={id}>
